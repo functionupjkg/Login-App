@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout from '../layout/layout'
 import Link from 'next/link';
 import Image from 'next/image';
+
 import {
     FaFacebookF,
     FaLinkedin,
@@ -9,7 +10,6 @@ import {
     FaGoogle
     
 } from "react-icons/fa";
-
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 
 import { useState } from 'react';
@@ -17,8 +17,10 @@ import { useState } from 'react';
 import { signIn, signOut } from 'next-auth/react';
 
 import { useFormik } from 'formik';
-import login_validate from '../lib/validate';
 
+import { redirect } from 'next/dist/server/api-utils';
+
+import login_validate from '../lib/validate';
 import styles from '../styles/Form.module.css';
 
 
@@ -39,6 +41,7 @@ export default function Login() {
 
     async function onSubmit(values) {
         console.log(values)
+        
     }
 
 
